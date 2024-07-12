@@ -1,0 +1,261 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+body {
+    height: 100vh;
+    background-image: url("../images/background-img.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.phonesignUpCover {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.alert {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#success,
+#error {
+    display: none;
+}
+
+.Loginhead {
+    padding: 5px;
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    color: #7a49ec;
+}
+
+.form-control {
+    border: 1px solid #377aee;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    text-align: center;
+}
+
+#recaptcha-container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btns {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btnColor {
+    width: 40%;
+    background-color: #7a49ec;
+    color: white;
+}
+
+.btnColor:hover {
+    background-color: #a891de;
+    color: white;
+}
+
+.google {
+    width: 100%;
+    font-weight: 600;
+    color: #696363;
+    margin-top: 20px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+.googleImg {
+    width: 20px;
+    margin-bottom: 2px;
+}
+
+
+
+/* Quiz Styling */
+
+#quizCover {
+    width: 100%;
+    background-image: url("../images/background-img.jpg");
+    background-size: cover;
+    /* display: none; */
+}
+
+.navbar {
+    height: 12%;
+    background-color: #FAEBEFFF;
+    color: #333D79FF;
+    padding: 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+
+.nav-head {
+    width: 100%;
+    text-align: center;
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+}
+
+.navbar-collapse {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quiz-body {
+    width: 100%;
+    padding: 10px;
+}
+
+.col {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.cards {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.cards:hover {
+    background-color: #a9b2ee;
+    color: white;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.card-head {
+    width: 100%;
+    padding: 5px;
+    color: #333D79FF;
+    text-align: center;
+    font-family: "Playfair Display", serif;
+    font-weight: 900;
+    font-size: 2rem;
+}
+
+.cardBtn {
+    width: 100%;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.start-btn {
+    background-color: #333D79FF;
+    color: #FAEBEFFF;
+    font-weight: 600;
+}
+
+.start-btn:hover {
+    background-color: #6976be;
+    color: white;
+}
+
+/* Quiz Questions */
+.quizPage {
+    width: 100%;
+    position: relative;
+    background-color: white;
+    display: none;
+}
+
+.quizPageCard {
+    margin-top: 10px;
+    margin-bottom: 50px;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+}
+
+.card-text{
+    font-size: 18px;
+}
+
+.list-group{
+    margin-bottom: 20px;
+}
+
+.list-group-item{
+    color: #333D79FF;
+}
+
+.list-group-item:hover{
+    background-color: #6976be;
+    color: white;
+}
+
+.submitBtn{
+    width: 100%;
+    padding: 5px;
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+}
+
+#quizPages{
+    display: none;
+}
+
+#resultShowCont{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.result-head{
+    width: 100%;
+    padding: 5px;
+    text-align: center;
+    color: #333D79FF;
+    font-family: "Playfair Display", serif;
+    font-weight: 900;
+    font-size: 2rem;
+}
+
+#resultBtn{
+    width: 100%;
+    background-color: #333D79FF;
+    color: white;
+}
+
+#resultBtn:hover{
+    background-color: #6976be;
+}
+
+#resultMess{
+    color: #333D79FF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
