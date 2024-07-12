@@ -499,8 +499,8 @@ let JavaScriptIntermediate = [
 
 ];
 
-// JS 
 
+// JS Basic Quiz
 function JsBasicquestions() {
     const quizCover = document.getElementById("quizCover");
     const quizPages = document.getElementById("quizPages");
@@ -509,7 +509,11 @@ function JsBasicquestions() {
     quizCover.style.display = "none";
     quizPages.style.display = "block";
 
-    const submitBtn = document.getElementById("SubmitbtnJS");
+    const submitBtnId = "SubmitbtnJSBasic"; // Unique ID for JS Basic quiz
+    const submitBtn = createSubmitButton(submitBtnId);
+    submitBtn.addEventListener("click", function(event) {
+        CalculateScoreJS(event, jsBasic);
+    });
 
     quizPagebody.innerHTML = '';
 
@@ -546,52 +550,7 @@ function JsBasicquestions() {
     quizPagebody.appendChild(submitBtn);
 }
 
-function CalculateScoreJS(event) {
-    event.preventDefault();
-
-    const quizPages = document.getElementById("quizPages");
-    const resultShowCont = document.getElementById("resultShowCont");
-    const resultMess = document.getElementById("resultMess");
-
-    quizPages.style.display = "none";
-    resultShowCont.style.display = "flex";
-
-    let score = 0;
-    for (let i = 0; i < jsBasic.length; i++) {
-        const selectedOption = document.querySelector(`input[name="question${i}"]:checked`);
-        if (selectedOption && selectedOption.value === jsBasic[i].answer) {
-            score++;
-        }
-    }
-
-    if (score >= 8) {
-        resultMess.innerHTML = `Congratulations on scoring ${score} out of ${jsBasic.length}! Well done on your impressive performance in the quiz. Keep up the great work!`;
-    } else {
-        resultMess.innerHTML = `Your effort is valued, but this time you scored ${score} out of ${jsBasic.length}, indicating that you did not pass this test. Keep learning and practicing; success comes with perseverance!`;
-    }
-}
-
-function resultBtnFux() {
-    const resultShowCont = document.getElementById("resultShowCont");
-    const quizCover = document.getElementById("quizCover");
-
-    resultShowCont.style.display = "none";
-    quizCover.style.display = "block";
-}
-
-document.addEventListener('DOMContentLoaded', function () {
-    const JSquizStart = document.getElementById("JSquizStart");
-    JSquizStart.addEventListener("click", JsBasicquestions);
-
-    const SubmitbtnJSBasic = document.getElementById("SubmitbtnJS");
-    SubmitbtnJSBasic.addEventListener("click", CalculateScoreJS);
-
-    const resultBtn = document.getElementById("resultBtn");
-    resultBtn.addEventListener("click", resultBtnFux);
-});
-
-//HTML
-
+// HTML Quiz
 function htmlquestions() {
     const quizCover = document.getElementById("quizCover");
     const quizPages = document.getElementById("quizPages");
@@ -600,7 +559,11 @@ function htmlquestions() {
     quizCover.style.display = "none";
     quizPages.style.display = "block";
 
-    const submitBtn = document.getElementById("SubmitbtnJS");
+    const submitBtnId = "SubmitbtnHTML"; // Unique ID for HTML quiz
+    const submitBtn = createSubmitButton(submitBtnId);
+    submitBtn.addEventListener("click", function(event) {
+        CalculateScoreJS(event, HTML);
+    });
 
     quizPagebody.innerHTML = '';
 
@@ -637,55 +600,7 @@ function htmlquestions() {
     quizPagebody.appendChild(submitBtn);
 }
 
-
-function CalculateScoreHTML(event) {
-    event.preventDefault();
-
-    const quizPages = document.getElementById("quizPages");
-    const resultShowCont = document.getElementById("resultShowCont");
-    const resultMess = document.getElementById("resultMess");
-
-    quizPages.style.display = "none";
-    resultShowCont.style.display = "flex";
-
-    let score = 0;
-    for (let i = 0; i < HTML.length; i++) {
-        const selectedOption = document.querySelector(`input[name="question${i}"]:checked`);
-        if (selectedOption && selectedOption.value === HTML[i].answer) {
-            score++;
-        }
-    }
-
-    if (score >= 8) {
-        resultMess.innerHTML = `Congratulations on scoring ${score} out of ${HTML.length}! Well done on your impressive performance in the quiz. Keep up the great work!`;
-    } else {
-        resultMess.innerHTML = `Your effort is valued, but this time you scored ${score} out of ${HTML.length}, indicating that you did not pass this test. Keep learning and practicing; success comes with perseverance!`;
-    }
-}
-
-function resultBtnFux() {
-    const resultShowCont = document.getElementById("resultShowCont");
-    const quizCover = document.getElementById("quizCover");
-
-    resultShowCont.style.display = "none";
-    quizCover.style.display = "block";
-}
-
-document.addEventListener("DOMContentLoaded", function () {
-
-    const htmlStartBtn = document.getElementById("htmlStartBtn");
-    htmlStartBtn.addEventListener("click", htmlquestions)
-
-    const SubmitbtnJSBasic = document.getElementById("SubmitbtnJS");
-    SubmitbtnJSBasic.addEventListener("click", CalculateScoreHTML);
-
-    const resultBtn = document.getElementById("resultBtn");
-    resultBtn.addEventListener("click", resultBtnFux);
-})
-
-
-// CSS
-
+// CSS Quiz
 function CSSquestions() {
     const quizCover = document.getElementById("quizCover");
     const quizPages = document.getElementById("quizPages");
@@ -694,7 +609,11 @@ function CSSquestions() {
     quizCover.style.display = "none";
     quizPages.style.display = "block";
 
-    const submitBtn = document.getElementById("SubmitbtnJS");
+    const submitBtnId = "SubmitbtnCSS"; // Unique ID for CSS quiz
+    const submitBtn = createSubmitButton(submitBtnId);
+    submitBtn.addEventListener("click", function(event) {
+        CalculateScoreJS(event, cSS);
+    });
 
     quizPagebody.innerHTML = '';
 
@@ -731,53 +650,7 @@ function CSSquestions() {
     quizPagebody.appendChild(submitBtn);
 }
 
-function CalculateScoreCSS(event) {
-    event.preventDefault();
-
-    const quizPages = document.getElementById("quizPages");
-    const resultShowCont = document.getElementById("resultShowCont");
-    const resultMess = document.getElementById("resultMess");
-
-    quizPages.style.display = "none";
-    resultShowCont.style.display = "flex";
-
-    let score = 0;
-    for (let i = 0; i < cSS.length; i++) {
-        const selectedOption = document.querySelector(`input[name="question${i}"]:checked`);
-        if (selectedOption && selectedOption.value === cSS[i].answer) {
-            score++;
-        }
-    }
-
-    if (score >= 8) {
-        resultMess.innerHTML = `Congratulations on scoring ${score} out of ${cSS.length}! Well done on your impressive performance in the quiz. Keep up the great work!`;
-    } else {
-        resultMess.innerHTML = `Your effort is valued, but this time you scored ${score} out of ${cSS.length}, indicating that you did not pass this test. Keep learning and practicing; success comes with perseverance!`;
-    }
-}
-
-function resultBtnFux() {
-    const resultShowCont = document.getElementById("resultShowCont");
-    const quizCover = document.getElementById("quizCover");
-
-    resultShowCont.style.display = "none";
-    quizCover.style.display = "block";
-}
-
-document.addEventListener("DOMContentLoaded", function () {
-
-    const cssStartBtn = document.getElementById("cssStartBtn");
-    cssStartBtn.addEventListener("click", CSSquestions)
-
-    const SubmitbtnJSBasic = document.getElementById("SubmitbtnJS");
-    SubmitbtnJSBasic.addEventListener("click", CalculateScoreCSS);
-
-    const resultBtn = document.getElementById("resultBtn");
-    resultBtn.addEventListener("click", resultBtnFux);
-})
-
-//JS INTERMEDIATE
-
+// JS Intermediate Quiz
 function JSquestions() {
     const quizCover = document.getElementById("quizCover");
     const quizPages = document.getElementById("quizPages");
@@ -786,7 +659,11 @@ function JSquestions() {
     quizCover.style.display = "none";
     quizPages.style.display = "block";
 
-    const submitBtn = document.getElementById("SubmitbtnJS");
+    const submitBtnId = "SubmitbtnJSInter"; // Unique ID for JS Intermediate quiz
+    const submitBtn = createSubmitButton(submitBtnId);
+    submitBtn.addEventListener("click", function(event) {
+        CalculateScoreJS(event, JavaScriptIntermediate);
+    });
 
     quizPagebody.innerHTML = '';
 
@@ -823,7 +700,15 @@ function JSquestions() {
     quizPagebody.appendChild(submitBtn);
 }
 
-function CalculateScoreJSInter(event) {
+function createSubmitButton(submitBtnId) {
+    const submitBtn = document.createElement("div");
+    submitBtn.className = "btn btn-primary";
+    submitBtn.id = submitBtnId;
+    submitBtn.textContent = "Submit";
+    return submitBtn;
+}
+
+function CalculateScoreJS(event, quizData) {
     event.preventDefault();
 
     const quizPages = document.getElementById("quizPages");
@@ -834,17 +719,17 @@ function CalculateScoreJSInter(event) {
     resultShowCont.style.display = "flex";
 
     let score = 0;
-    for (let i = 0; i < JavaScriptIntermediate.length; i++) {
+    for (let i = 0; i < quizData.length; i++) {
         const selectedOption = document.querySelector(`input[name="question${i}"]:checked`);
-        if (selectedOption && selectedOption.value === JavaScriptIntermediate[i].answer) {
+        if (selectedOption && selectedOption.value === quizData[i].answer) {
             score++;
         }
     }
 
     if (score >= 8) {
-        resultMess.innerHTML = `Congratulations on scoring ${score} out of ${JavaScriptIntermediate.length}! Well done on your impressive performance in the quiz. Keep up the great work!`;
+        resultMess.innerHTML = `Congratulations on scoring ${score} out of ${quizData.length}! Well done on your impressive performance in the quiz. Keep up the great work!`;
     } else {
-        resultMess.innerHTML = `Your effort is valued, but this time you scored ${score} out of ${JavaScriptIntermediate.length}, indicating that you did not pass this test. Keep learning and practicing; success comes with perseverance!`;
+        resultMess.innerHTML = `Your effort is valued, but this time you scored ${score} out of ${quizData.length}, indicating that you did not pass this test. Keep learning and practicing; success comes with perseverance!`;
     }
 }
 
@@ -856,18 +741,22 @@ function resultBtnFux() {
     quizCover.style.display = "block";
 }
 
-
 document.addEventListener("DOMContentLoaded", function () {
+    const JSquizStart = document.getElementById("JSquizStart");
+    JSquizStart.addEventListener("click", JsBasicquestions);
+
+    const htmlStartBtn = document.getElementById("htmlStartBtn");
+    htmlStartBtn.addEventListener("click", htmlquestions);
+
+    const cssStartBtn = document.getElementById("cssStartBtn");
+    cssStartBtn.addEventListener("click", CSSquestions);
 
     const JSInterStart = document.getElementById("JSInterStart");
-    JSInterStart.addEventListener("click", JSquestions)
-
-    const SubmitbtnJSBasic = document.getElementById("SubmitbtnJS");
-    SubmitbtnJSBasic.addEventListener("click", CalculateScoreJSInter);
+    JSInterStart.addEventListener("click", JSquestions);
 
     const resultBtn = document.getElementById("resultBtn");
     resultBtn.addEventListener("click", resultBtnFux);
-})
+});
 
 
 
